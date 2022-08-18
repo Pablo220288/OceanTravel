@@ -1,0 +1,23 @@
+@media (min-width:768px){
+    .home{
+        .home-container{
+            flex-direction: row-reverse;
+            width: 90%;
+            .slogan-container{
+                line-height: 100px;
+                .slogan-uno, .slogan-dos{
+                    .slogan{
+                        font-size: 50px;
+                        align-self: center;
+                    }
+                }
+            }
+        }
+        .wtsp_float{
+            bottom: 20px;
+            right: 20px;
+        }
+    }
+}
+
+

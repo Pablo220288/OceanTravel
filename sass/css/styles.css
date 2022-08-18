@@ -1,0 +1,614 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+@font-face {
+  font-family: Logo;
+  src: url("../../font/VeganStylePersonalUse-5Y58.ttf") format("truetype");
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.nav {
+  position: fixed;
+  top: 2px;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.386);
+}
+.nav .navContainer {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+.nav .navContainer h1 {
+  font-family: Logo;
+  font-size: 1rem;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.nav .navContainer .menu {
+  display: none;
+  justify-content: flex-end;
+  margin: 0 -10px;
+}
+.nav .navContainer .menu a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  position: relative;
+}
+.nav .navContainer .menu a span {
+  position: absolute;
+  background: #00ffff;
+  width: 0;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  transition: all 300ms ease-out;
+}
+.nav .navContainer .menu a:hover span {
+  width: 100%;
+}
+.nav .navContainer .menu .active span {
+  width: 100%;
+}
+.nav .navContainer .hamburger {
+  display: block;
+  position: relative;
+  z-index: 1;
+  user-select: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+.nav .navContainer .hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin-bottom: 5px;
+  position: relative;
+  background-color: #fff;
+  border-radius: 6px;
+  z-index: 1;
+  transform-origin: 0 0;
+  transition: 0.4s;
+}
+.nav .navContainer .hamburger:hover span:nth-child(2) {
+  transform: translateX(6px);
+  border-radius: 6px;
+  background-color: #00ffff;
+}
+.nav .navContainer .is-active:hover span {
+  background-color: #00ffff;
+}
+.nav .navContainer .is-active span:nth-child(1) {
+  transform: translate(0px, 0px) rotate(45deg);
+}
+.nav .navContainer .is-active span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(15px);
+}
+.nav .navContainer .is-active span:nth-child(3) {
+  transform: translate(-2px, 1px) rotate(-45deg);
+}
+
+.nav-mobile {
+  opacity: 1;
+}
+.nav-mobile .nav-mobile-container {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 98;
+  background-color: rgba(0, 0, 0, 0.459);
+  padding-top: 70px;
+  transition: 0.4s;
+}
+.nav-mobile .nav-mobile-container a {
+  display: block;
+  text-align: center;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+  margin-bottom: 16px;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.89);
+  position: relative;
+  overflow: hidden;
+}
+.nav-mobile .nav-mobile-container a span {
+  position: absolute;
+  background: #00ffff;
+  transition: 0.5s;
+}
+.nav-mobile .nav-mobile-container a span:nth-child(1) {
+  width: 100%;
+  height: 2px;
+  top: 0;
+  left: -100%;
+}
+.nav-mobile .nav-mobile-container a span:nth-child(2) {
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  right: -100%;
+}
+.nav-mobile .nav-mobile-container a span:nth-child(3) {
+  width: 2px;
+  height: 100%;
+  bottom: -100%;
+  left: 0;
+}
+.nav-mobile .nav-mobile-container a span:nth-child(4) {
+  width: 2px;
+  height: 100%;
+  top: -100%;
+  right: 0;
+}
+.nav-mobile .nav-mobile-container a:hover span:nth-child(1) {
+  left: 0;
+}
+.nav-mobile .nav-mobile-container a:hover span:nth-child(2) {
+  right: 0;
+}
+.nav-mobile .nav-mobile-container a:hover span:nth-child(3) {
+  bottom: 0;
+}
+.nav-mobile .nav-mobile-container a:hover span:nth-child(4) {
+  top: 0;
+}
+.nav-mobile .nav-mobile-container a:hover {
+  background-color: rgb(0, 0, 0);
+}
+.nav-mobile .is-active {
+  left: 0;
+}
+
+@media (min-width: 768px) {
+  .nav .navContainer .hamburger {
+    display: none;
+  }
+  .nav .navContainer .menu {
+    display: flex;
+  }
+  .nav-mobile {
+    opacity: 0;
+  }
+}
+.home {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.365);
+}
+.home video {
+  position: relative;
+  min-width: 100%;
+  min-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.home .home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: absolute;
+  gap: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 0;
+}
+.home .home-container .slogan-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 50px;
+}
+.home .home-container .slogan-container .slogan-uno {
+  display: flex;
+  justify-content: center;
+}
+.home .home-container .slogan-container .slogan-uno .slogan {
+  font-family: Logo;
+  color: #fff;
+  font-size: 35px;
+  text-align: center;
+  transition: all 500ms ease;
+}
+.home .home-container .slogan-container .slogan-uno .slogan:nth-child(2) {
+  margin-right: 15px;
+}
+.home .home-container .slogan-container .slogan-uno .slogan:nth-child(9) {
+  margin-right: 15px;
+}
+.home .home-container .slogan-container .slogan-dos {
+  display: flex;
+  justify-content: center;
+}
+.home .home-container .slogan-container .slogan-dos .slogan {
+  font-family: Logo;
+  color: #fff;
+  font-size: 35px;
+  text-align: center;
+  transition: all 500ms ease;
+}
+.home .home-container .slogan-container .slogan-dos .slogan:nth-child(7) {
+  margin-right: 15px;
+}
+.home .home-container .formulario {
+  width: 100%;
+  max-width: 250px;
+  height: 280px;
+  background-color: rgba(255, 255, 255, 0.868);
+  border-radius: 10px;
+  padding: 20px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.home .home-container .formulario .formulario-destino, .home .home-container .formulario .formulario-buscar, .home .home-container .formulario .formulario-huespedes, .home .home-container .formulario .formulario-inout .in, .home .home-container .formulario .formulario-inout .out {
+  position: relative;
+  height: 48px;
+}
+.home .home-container .formulario .formulario-destino .formulario-destino-input, .home .home-container .formulario .formulario-buscar .formulario-destino-input, .home .home-container .formulario .formulario-huespedes .formulario-destino-input, .home .home-container .formulario .formulario-huespedes .formulario-input, .home .home-container .formulario .formulario-inout .in .formulario-destino-input, .home .home-container .formulario .formulario-inout .in .formulario-input, .home .home-container .formulario .formulario-inout .out .formulario-destino-input, .home .home-container .formulario .formulario-inout .out .formulario-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-bottom: 2px solid #000;
+  outline: none;
+  padding: 1rem;
+  background: none;
+  z-index: 1;
+}
+.home .home-container .formulario .formulario-destino .formulario-destino-label, .home .home-container .formulario .formulario-buscar .formulario-destino-label, .home .home-container .formulario .formulario-huespedes .formulario-destino-label, .home .home-container .formulario .formulario-huespedes .formulario-label, .home .home-container .formulario .formulario-inout .in .formulario-destino-label, .home .home-container .formulario .formulario-inout .in .formulario-label, .home .home-container .formulario .formulario-inout .out .formulario-destino-label, .home .home-container .formulario .formulario-inout .out .formulario-label {
+  position: absolute;
+  top: 50%;
+  left: 0.3rem;
+  transform: translatey(-50%);
+  padding: 0.25rem;
+  text-shadow: #fff;
+  color: black;
+  transition: 0.3s;
+  z-index: 0;
+}
+.home .home-container .formulario .formulario-destino .formulario-destino-label i, .home .home-container .formulario .formulario-buscar .formulario-destino-label i, .home .home-container .formulario .formulario-huespedes .formulario-destino-label i, .home .home-container .formulario .formulario-huespedes .formulario-label i, .home .home-container .formulario .formulario-inout .in .formulario-destino-label i, .home .home-container .formulario .formulario-inout .in .formulario-label i, .home .home-container .formulario .formulario-inout .out .formulario-destino-label i, .home .home-container .formulario .formulario-inout .out .formulario-label i {
+  margin-right: 5px;
+}
+.home .home-container .formulario .formulario-destino .formulario-destino-input:focus + .formulario-destino-label, .home .home-container .formulario .formulario-buscar .formulario-destino-input:focus + .formulario-destino-label, .home .home-container .formulario .formulario-huespedes .formulario-destino .formulario-destino-input:focus + .formulario-label, .home .home-container .formulario .formulario-huespedes .formulario-buscar .formulario-destino-input:focus + .formulario-label, .home .home-container .formulario .formulario-huespedes .formulario-destino .formulario-input:focus + .formulario-destino-label, .home .home-container .formulario .formulario-huespedes .formulario-buscar .formulario-input:focus + .formulario-destino-label, .home .home-container .formulario .formulario-huespedes .formulario-destino .formulario-input:focus + .formulario-label, .home .home-container .formulario .formulario-huespedes .formulario-buscar .formulario-input:focus + .formulario-label, .home .home-container .formulario .formulario-huespedes .formulario-destino-input:focus + .formulario-destino-label, .home .home-container .formulario .formulario-huespedes .formulario-destino-input:focus + .formulario-label, .home .home-container .formulario .formulario-huespedes .formulario-input:focus + .formulario-destino-label, .home .home-container .formulario .formulario-huespedes .formulario-input:focus + .formulario-label, .home .home-container .formulario .formulario-inout .in .formulario-destino .formulario-destino-input:focus + .formulario-label, .home .home-container .formulario .formulario-inout .in .formulario-buscar .formulario-destino-input:focus + .formulario-label, .home .home-container .formulario .formulario-inout .out .formulario-destino .formulario-destino-input:focus + .formulario-label, .home .home-container .formulario .formulario-inout .out .formulario-buscar .formulario-destino-input:focus + .formulario-label, .home .home-container .formulario .formulario-inout .in .formulario-destino .formulario-input:focus + .formulario-destino-label, .home .home-container .formulario .formulario-inout .in .formulario-buscar .formulario-input:focus + .formulario-destino-label, .home .home-container .formulario .formulario-inout .in .formulario-destino .formulario-input:focus + .formulario-label, .home .home-container .formulario .formulario-inout .in .formulario-buscar .formulario-input:focus + .formulario-label, .home .home-container .formulario .formulario-inout .out .formulario-destino .formulario-input:focus + .formulario-destino-label, .home .home-container .formulario .formulario-inout .out .formulario-buscar .formulario-input:focus + .formulario-destino-label, .home .home-container .formulario .formulario-inout .out .formulario-destino .formulario-input:focus + .formulario-label, .home .home-container .formulario .formulario-inout .out .formulario-buscar .formulario-input:focus + .formulario-label, .home .home-container .formulario .formulario-inout .in .formulario-destino-input:focus + .formulario-destino-label, .home .home-container .formulario .formulario-inout .in .formulario-destino-input:focus + .formulario-label, .home .home-container .formulario .formulario-inout .in .formulario-input:focus + .formulario-destino-label, .home .home-container .formulario .formulario-inout .in .formulario-input:focus + .formulario-label, .home .home-container .formulario .formulario-inout .out .formulario-destino-input:focus + .formulario-destino-label, .home .home-container .formulario .formulario-inout .out .formulario-destino-input:focus + .formulario-label, .home .home-container .formulario .formulario-inout .out .formulario-input:focus + .formulario-destino-label, .home .home-container .formulario .formulario-inout .out .formulario-input:focus + .formulario-label {
+  top: 0;
+  left: -1rem;
+  color: #1d4d8b;
+  font-size: 0.7rem;
+  z-index: 10;
+  font-weight: 500;
+}
+.home .home-container .formulario .formulario-destino .formulario-destino-input:focus + .formulario-destino-label i, .home .home-container .formulario .formulario-buscar .formulario-destino-input:focus + .formulario-destino-label i, .home .home-container .formulario .formulario-huespedes .formulario-destino-input:focus + .formulario-destino-label i, .home .home-container .formulario .formulario-huespedes .formulario-destino-input:focus + .formulario-label i, .home .home-container .formulario .formulario-huespedes .formulario-input:focus + .formulario-destino-label i, .home .home-container .formulario .formulario-huespedes .formulario-input:focus + .formulario-label i, .home .home-container .formulario .formulario-inout .in .formulario-destino-input:focus + .formulario-destino-label i, .home .home-container .formulario .formulario-inout .in .formulario-destino-input:focus + .formulario-label i, .home .home-container .formulario .formulario-inout .in .formulario-input:focus + .formulario-destino-label i, .home .home-container .formulario .formulario-inout .in .formulario-input:focus + .formulario-label i, .home .home-container .formulario .formulario-inout .out .formulario-destino-input:focus + .formulario-destino-label i, .home .home-container .formulario .formulario-inout .out .formulario-destino-input:focus + .formulario-label i, .home .home-container .formulario .formulario-inout .out .formulario-input:focus + .formulario-destino-label i, .home .home-container .formulario .formulario-inout .out .formulario-input:focus + .formulario-label i {
+  opacity: 0;
+}
+.home .home-container .formulario .formulario-destino .formulario-destino-input:not(:placeholder-shown).formulario-destino-input:not(:focus) + .formulario-destino-label, .home .home-container .formulario .formulario-buscar .formulario-destino-input:not(:placeholder-shown).formulario-destino-input:not(:focus) + .formulario-destino-label, .home .home-container .formulario .formulario-huespedes .formulario-destino .formulario-destino-input:not(:placeholder-shown).formulario-destino-input:not(:focus) + .formulario-label, .home .home-container .formulario .formulario-huespedes .formulario-buscar .formulario-destino-input:not(:placeholder-shown).formulario-destino-input:not(:focus) + .formulario-label, .home .home-container .formulario .formulario-huespedes .formulario-destino .formulario-input:not(:placeholder-shown):not(:focus) + .formulario-destino-label, .home .home-container .formulario .formulario-huespedes .formulario-buscar .formulario-input:not(:placeholder-shown):not(:focus) + .formulario-destino-label, .home .home-container .formulario .formulario-huespedes .formulario-destino .formulario-input:not(:placeholder-shown):not(:focus) + .formulario-label, .home .home-container .formulario .formulario-huespedes .formulario-buscar .formulario-input:not(:placeholder-shown):not(:focus) + .formulario-label, .home .home-container .formulario .formulario-huespedes .formulario-destino-input:not(:placeholder-shown).formulario-destino-input:not(:focus) + .formulario-destino-label, .home .home-container .formulario .formulario-huespedes .formulario-destino-input:not(:placeholder-shown).formulario-destino-input:not(:focus) + .formulario-label, .home .home-container .formulario .formulario-huespedes .formulario-input:not(:placeholder-shown):not(:focus) + .formulario-destino-label, .home .home-container .formulario .formulario-huespedes .formulario-input:not(:placeholder-shown):not(:focus) + .formulario-label, .home .home-container .formulario .formulario-inout .in .formulario-destino .formulario-destino-input:not(:placeholder-shown).formulario-destino-input:not(:focus) + .formulario-label, .home .home-container .formulario .formulario-inout .in .formulario-buscar .formulario-destino-input:not(:placeholder-shown).formulario-destino-input:not(:focus) + .formulario-label, .home .home-container .formulario .formulario-inout .out .formulario-destino .formulario-destino-input:not(:placeholder-shown).formulario-destino-input:not(:focus) + .formulario-label, .home .home-container .formulario .formulario-inout .out .formulario-buscar .formulario-destino-input:not(:placeholder-shown).formulario-destino-input:not(:focus) + .formulario-label, .home .home-container .formulario .formulario-inout .in .formulario-destino .formulario-input:not(:placeholder-shown):not(:focus) + .formulario-destino-label, .home .home-container .formulario .formulario-inout .in .formulario-buscar .formulario-input:not(:placeholder-shown):not(:focus) + .formulario-destino-label, .home .home-container .formulario .formulario-inout .in .formulario-destino .formulario-input:not(:placeholder-shown):not(:focus) + .formulario-label, .home .home-container .formulario .formulario-inout .in .formulario-buscar .formulario-input:not(:placeholder-shown):not(:focus) + .formulario-label, .home .home-container .formulario .formulario-inout .out .formulario-destino .formulario-input:not(:placeholder-shown):not(:focus) + .formulario-destino-label, .home .home-container .formulario .formulario-inout .out .formulario-buscar .formulario-input:not(:placeholder-shown):not(:focus) + .formulario-destino-label, .home .home-container .formulario .formulario-inout .out .formulario-destino .formulario-input:not(:placeholder-shown):not(:focus) + .formulario-label, .home .home-container .formulario .formulario-inout .out .formulario-buscar .formulario-input:not(:placeholder-shown):not(:focus) + .formulario-label, .home .home-container .formulario .formulario-inout .in .formulario-destino-input:not(:placeholder-shown).formulario-destino-input:not(:focus) + .formulario-destino-label, .home .home-container .formulario .formulario-inout .in .formulario-destino-input:not(:placeholder-shown).formulario-destino-input:not(:focus) + .formulario-label, .home .home-container .formulario .formulario-inout .in .formulario-input:not(:placeholder-shown):not(:focus) + .formulario-destino-label, .home .home-container .formulario .formulario-inout .in .formulario-input:not(:placeholder-shown):not(:focus) + .formulario-label, .home .home-container .formulario .formulario-inout .out .formulario-destino-input:not(:placeholder-shown).formulario-destino-input:not(:focus) + .formulario-destino-label, .home .home-container .formulario .formulario-inout .out .formulario-destino-input:not(:placeholder-shown).formulario-destino-input:not(:focus) + .formulario-label, .home .home-container .formulario .formulario-inout .out .formulario-input:not(:placeholder-shown):not(:focus) + .formulario-destino-label, .home .home-container .formulario .formulario-inout .out .formulario-input:not(:placeholder-shown):not(:focus) + .formulario-label {
+  top: 0;
+  left: -1rem;
+  font-size: 0.7rem;
+  z-index: 10;
+}
+.home .home-container .formulario .formulario-destino .formulario-destino-input:not(:placeholder-shown).formulario-destino-input:not(:focus) + .formulario-destino-label i, .home .home-container .formulario .formulario-buscar .formulario-destino-input:not(:placeholder-shown).formulario-destino-input:not(:focus) + .formulario-destino-label i, .home .home-container .formulario .formulario-huespedes .formulario-destino-input:not(:placeholder-shown).formulario-destino-input:not(:focus) + .formulario-destino-label i, .home .home-container .formulario .formulario-huespedes .formulario-destino-input:not(:placeholder-shown).formulario-destino-input:not(:focus) + .formulario-label i, .home .home-container .formulario .formulario-huespedes .formulario-input:not(:placeholder-shown):not(:focus) + .formulario-destino-label i, .home .home-container .formulario .formulario-huespedes .formulario-input:not(:placeholder-shown):not(:focus) + .formulario-label i, .home .home-container .formulario .formulario-inout .in .formulario-destino-input:not(:placeholder-shown).formulario-destino-input:not(:focus) + .formulario-destino-label i, .home .home-container .formulario .formulario-inout .in .formulario-destino-input:not(:placeholder-shown).formulario-destino-input:not(:focus) + .formulario-label i, .home .home-container .formulario .formulario-inout .in .formulario-input:not(:placeholder-shown):not(:focus) + .formulario-destino-label i, .home .home-container .formulario .formulario-inout .in .formulario-input:not(:placeholder-shown):not(:focus) + .formulario-label i, .home .home-container .formulario .formulario-inout .out .formulario-destino-input:not(:placeholder-shown).formulario-destino-input:not(:focus) + .formulario-destino-label i, .home .home-container .formulario .formulario-inout .out .formulario-destino-input:not(:placeholder-shown).formulario-destino-input:not(:focus) + .formulario-label i, .home .home-container .formulario .formulario-inout .out .formulario-input:not(:placeholder-shown):not(:focus) + .formulario-destino-label i, .home .home-container .formulario .formulario-inout .out .formulario-input:not(:placeholder-shown):not(:focus) + .formulario-label i {
+  opacity: 0;
+}
+.home .home-container .formulario .formulario-destino .formulario-destino-input:focus, .home .home-container .formulario .formulario-buscar .formulario-destino-input:focus, .home .home-container .formulario .formulario-huespedes .formulario-destino-input:focus, .home .home-container .formulario .formulario-huespedes .formulario-input:focus, .home .home-container .formulario .formulario-inout .in .formulario-destino-input:focus, .home .home-container .formulario .formulario-inout .in .formulario-input:focus, .home .home-container .formulario .formulario-inout .out .formulario-destino-input:focus, .home .home-container .formulario .formulario-inout .out .formulario-input:focus {
+  border-bottom: 2px solid #1d4d8b;
+}
+.home .home-container .formulario .formulario-destino:hover .formulario-destino-label, .home .home-container .formulario .formulario-buscar:hover .formulario-destino-label, .home .home-container .formulario .formulario-destino:hover .formulario-huespedes .formulario-label, .home .home-container .formulario .formulario-buscar:hover .formulario-huespedes .formulario-label, .home .home-container .formulario .formulario-huespedes .formulario-destino:hover .formulario-label, .home .home-container .formulario .formulario-huespedes .formulario-buscar:hover .formulario-label, .home .home-container .formulario .formulario-huespedes:hover .formulario-destino-label, .home .home-container .formulario .formulario-huespedes:hover .formulario-label, .home .home-container .formulario .formulario-destino:hover .formulario-inout .in .formulario-label, .home .home-container .formulario .formulario-buscar:hover .formulario-inout .in .formulario-label, .home .home-container .formulario .formulario-inout .in .formulario-destino:hover .formulario-label, .home .home-container .formulario .formulario-inout .in .formulario-buscar:hover .formulario-label, .home .home-container .formulario .formulario-destino:hover .formulario-inout .out .formulario-label, .home .home-container .formulario .formulario-buscar:hover .formulario-inout .out .formulario-label, .home .home-container .formulario .formulario-inout .out .formulario-destino:hover .formulario-label, .home .home-container .formulario .formulario-inout .out .formulario-buscar:hover .formulario-label, .home .home-container .formulario .formulario-inout .in:hover .formulario-destino-label, .home .home-container .formulario .formulario-inout .in:hover .formulario-label, .home .home-container .formulario .formulario-inout .out:hover .formulario-destino-label, .home .home-container .formulario .formulario-inout .out:hover .formulario-label {
+  color: #1d4d8b;
+}
+.home .home-container .formulario .formulario-inout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.home .home-container .formulario .formulario-inout .in, .home .home-container .formulario .formulario-inout .out {
+  width: 100px;
+}
+.home .home-container .formulario .formulario-buscar .formulario-button {
+  position: absolute;
+  background-color: transparent;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 40px;
+  border: none;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  transition: all 500ms ease;
+  cursor: pointer;
+  outline: none;
+  font-size: 1rem;
+  overflow: hidden;
+}
+.home .home-container .formulario .formulario-buscar .formulario-button i {
+  margin-right: 5px;
+}
+.home .home-container .formulario .formulario-buscar .formulario-button span {
+  position: absolute;
+  background: #1d4d8b;
+  transition: 0.5s;
+}
+.home .home-container .formulario .formulario-buscar .formulario-button span:nth-child(1) {
+  width: 100%;
+  height: 2px;
+  top: 0;
+  left: -100%;
+}
+.home .home-container .formulario .formulario-buscar .formulario-button span:nth-child(2) {
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  right: -100%;
+}
+.home .home-container .formulario .formulario-buscar .formulario-button span:nth-child(3) {
+  width: 2px;
+  height: 100%;
+  bottom: -100%;
+  left: 0;
+}
+.home .home-container .formulario .formulario-buscar .formulario-button span:nth-child(4) {
+  width: 2px;
+  height: 100%;
+  top: -100%;
+  right: 0;
+}
+.home .home-container .formulario .formulario-buscar .formulario-button:hover span:nth-child(1) {
+  left: 0;
+}
+.home .home-container .formulario .formulario-buscar .formulario-button:hover span:nth-child(2) {
+  right: 0;
+}
+.home .home-container .formulario .formulario-buscar .formulario-button:hover span:nth-child(3) {
+  bottom: 0;
+}
+.home .home-container .formulario .formulario-buscar .formulario-button:hover span:nth-child(4) {
+  top: 0;
+}
+.home .home-container .formulario .formulario-buscar .formulario-button:hover {
+  color: #1d4d8b;
+  font-size: 1.1rem;
+}
+.home .wtsp_float {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #25d366;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 7px;
+  right: 7px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  transition: all 600ms ease;
+  animation: slide-in-br 0.5s 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.home .wtsp_float .wtsp_float_container {
+  width: 40px;
+  height: 40px;
+  overflow: visible;
+}
+.home .wtsp_float .wtsp_float_container .wtsp_float_container_plain, .home .wtsp_float .wtsp_float_container .wtsp_float_container_chat {
+  fill: none;
+  stroke: #ffffff;
+  stroke-dasharray: 1097;
+  stroke-dashoffset: 1097;
+  transition: all 600ms ease;
+}
+.home .wtsp_float .wtsp_float_container .wtsp_float_container_plain {
+  animation: joinchat_plain 6s 3.2s ease-in-out infinite;
+  transform: translateX(40px);
+}
+.home .wtsp_float .wtsp_float_container .wtsp_float_container_chat {
+  animation: joinchat_plain 6s 0.2s ease-in-out infinite;
+}
+.home .wtsp_float:hover {
+  background-color: #ffffff;
+  box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3);
+}
+.home .wtsp_float:hover .wtsp_float_container_plain {
+  stroke: #25d366;
+}
+.home .wtsp_float:hover .wtsp_float_container_chat {
+  stroke: #25d366;
+}
+
+footer span {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+.about .about-container {
+  display: flex;
+  justify-content: center;
+}
+.about .about-container .about-title {
+  font-family: Logo;
+  font-size: 60px;
+  letter-spacing: 3px;
+}
+
+@media (min-width: 768px) {
+  .home .home-container {
+    flex-direction: row-reverse;
+    width: 90%;
+  }
+  .home .home-container .slogan-container {
+    line-height: 100px;
+  }
+  .home .home-container .slogan-container .slogan-uno .slogan, .home .home-container .slogan-container .slogan-dos .slogan {
+    font-size: 50px;
+    align-self: center;
+  }
+  .home .wtsp_float {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+@media (min-width: 1000px) {
+  .home .home-container {
+    flex-direction: column;
+    width: 90%;
+  }
+  .home .home-container .slogan-container {
+    flex-direction: row;
+    line-height: 100px;
+  }
+  .home .home-container .slogan-container .slogan-uno .slogan, .home .home-container .slogan-container .slogan-dos .slogan {
+    font-size: 50px;
+    align-self: center;
+  }
+  .home .home-container .slogan-container .slogan-uno .slogan:nth-child(14) {
+    margin-right: 15px;
+  }
+  .home .home-container .formulario {
+    max-width: 1100px;
+    height: 68px;
+    flex-direction: row;
+    align-items: center;
+  }
+  .home .home-container .formulario .formulario-destino, .home .home-container .formulario .formulario-inout .in, .home .home-container .formulario .formulario-inout .out, .home .home-container .formulario .formulario-huespedes, .home .home-container .formulario .formulario-buscar {
+    width: 200px;
+  }
+  .home .home-container .formulario .formulario-destino .formulario-destino-input, .home .home-container .formulario .formulario-inout .in .formulario-destino-input, .home .home-container .formulario .formulario-inout .out .formulario-destino-input, .home .home-container .formulario .formulario-huespedes .formulario-destino-input, .home .home-container .formulario .formulario-buscar .formulario-destino-input, .home .home-container .formulario .formulario-inout .in .formulario-input, .home .home-container .formulario .formulario-inout .out .formulario-input, .home .home-container .formulario .formulario-huespedes .formulario-input {
+    width: 90%;
+  }
+}
+.animated {
+  -webkit-animation: jello-vertical 1.5s both;
+  animation: jello-vertical 1.5s both;
+}
+
+@-webkit-keyframes jello-vertical {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(0.85, 1.15, 1);
+    transform: scale3d(0.85, 1.15, 1);
+    color: #00ffff;
+  }
+  65% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes jello-vertical {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(0.85, 1.15, 1);
+    transform: scale3d(0.85, 1.15, 1);
+    color: #00ffff;
+  }
+  65% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@-webkit-keyframes slide-in-br {
+  0% {
+    -webkit-transform: translateY(1000px) translateX(1000px);
+    transform: translateY(1000px) translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) translateX(0);
+    transform: translateY(0) translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-br {
+  0% {
+    -webkit-transform: translateY(1000px) translateX(1000px);
+    transform: translateY(1000px) translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) translateX(0);
+    transform: translateY(0) translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes joinchat_plain {
+  0%, 50%, to {
+    stroke-dashoffset: 1097;
+  }
+  5%, 45% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

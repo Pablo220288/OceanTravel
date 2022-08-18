@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>:: Ocean Travel ::</title>
+
+        <!--Estilos CSS-->
+        <link rel="stylesheet" href="sass/css/styles.css">
+    </head>
+    <body>
+        <header>
+            <nav class="nav">
+                <div class="navContainer">
+                    <h1>Ocean Travel</h1>
+                    <div class="menu">
+                        <a href="#home" class="active"><span></span>Inicio</a>
+                        <a href="#about"><span></span>Nosotros</a>
+                        <a href="#"><span></span>Reservas</a>
+                        <a href="#"><span></span>Contacto</a>
+                    </div>
+                    <button class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+            <nav class="nav-mobile">
+                <div class="nav-mobile-container">
+                    <a href="#home"><span></span><span></span><span></span><span></span>Inicio</a>
+                    <a href="#about"><span></span><span></span><span></span><span></span>Nosotros</a>
+                    <a href="#"><span></span><span></span><span></span><span></span>Reservas</a>
+                    <a href="#"><span></span><span></span><span></span><span></span>Contacto</a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="home" id="home">
+                <video src="assets/home.mp4" autoplay loop muted></video>
+                <div class="home-container">
+                    <div class="slogan-container">
+                        <div class="slogan-uno">
+                            <span class="slogan">T</span>
+                            <span class="slogan">u</span>
+                            <span class="slogan">p</span>
+                            <span class="slogan">r</span>
+                            <span class="slogan">ó</span>
+                            <span class="slogan">x</span>
+                            <span class="slogan">i</span>
+                            <span class="slogan">m</span>
+                            <span class="slogan">o</span>
+                            <span class="slogan">v</span>
+                            <span class="slogan">i</span>
+                            <span class="slogan">a</span>
+                            <span class="slogan">j</span>
+                            <span class="slogan">e</span>
+                        </div>
+                        <div class="slogan-dos">
+                            <span class="slogan">e</span>
+                            <span class="slogan">m</span>
+                            <span class="slogan">p</span>
+                            <span class="slogan">i</span>
+                            <span class="slogan">e</span>
+                            <span class="slogan">z</span>
+                            <span class="slogan">a</span>
+                            <span class="slogan">a</span>
+                            <span class="slogan">q</span>
+                            <span class="slogan">u</span>
+                            <span class="slogan">i</span>
+                        </div>
+                    </div>
+                    <form class="formulario" action="">
+                        <div class="formulario-destino">
+                            <input class="formulario-destino-input" type="text" id="destino" placeholder=" ">
+                            <label class="formulario-destino-label" for="destino"><i class="bi bi-geo-alt"></i>Destino</label>
+                        </div>
+                        <div class="formulario-inout">
+                            <div class="in">
+                                <input class="formulario-input" type="text" id="in" placeholder=" ">
+                                <label class="formulario-label" for="in"><i class="bi bi-bookmark-check"></i>Entrada</label>
+                            </div>
+                            <div class="out">
+                                <input class="formulario-input" type="text" id="out" placeholder=" ">
+                                <label class="formulario-label" for="out"><i class="bi bi-bookmark-x"></i>Salida</label>
+                            </div>
+                        </div>
+                        <div class="formulario-huespedes">
+                            <input class="formulario-input" type="text" id="huespedes" placeholder=" ">
+                            <label class="formulario-label" for="huespedes"><i class="bi bi-people"></i>Huespedes</label>
+                        </div>
+                        <div class="formulario-buscar">
+                            <button class="formulario-button" type="submit">
+                                <span></span><span></span><span></span><span></span>
+                                <i class="bi bi-search"></i>
+                                Buscar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="wtsp_float">
+                    <svg class="wtsp_float_container" viewBox="0 0 400 400" stroke-linecap="round" stroke-width="33"><path class="wtsp_float_container_plain" d="M168.83 200.504H79.218L33.04 44.284a1 1 0 0 1 1.386-1.188L365.083 199.04a1 1 0 0 1 .003 1.808L34.432 357.903a1 1 0 0 1-1.388-1.187l29.42-99.427"></path><path class="wtsp_float_container_chat" d="M318.087 318.087c-52.982 52.982-132.708 62.922-195.725 29.82l-80.449 10.18 10.358-80.112C18.956 214.905 28.836 134.99 81.913 81.913c65.218-65.217 170.956-65.217 236.174 0 42.661 42.661 57.416 102.661 44.265 157.316"></path> </svg>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <span>&copy;2022 - By. Pablo Hernandez</span>
+        </footer>
+
+        <!--JavaScript-->
+        <script src="js/travel.js"></script>
+    </body>
+</html>

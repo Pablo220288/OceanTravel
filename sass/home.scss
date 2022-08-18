@@ -1,0 +1,282 @@
+.home{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.365);
+        video{
+        position: relative;
+        min-width: 100%;
+        min-height: 100%;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+    .home-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        position:absolute;
+        gap: 30px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px 0;
+        .slogan-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            line-height: 50px;
+            .slogan-uno{
+                display: flex;
+                justify-content: center;
+                .slogan{
+                    font-family: Logo;
+                    color: #fff;
+                    font-size: 35px;
+                    text-align: center;
+                    transition: all 500ms ease;
+                    &:nth-child(2){
+                        margin-right: 15px;
+                    }
+                    &:nth-child(9){
+                        margin-right: 15px;
+                    }
+                }
+            }
+            .slogan-dos{
+                display: flex;
+                justify-content: center;
+                .slogan{
+                    font-family: Logo;
+                    color: #fff;
+                    font-size: 35px;
+                    text-align: center;
+                    transition: all 500ms ease;
+                    &:nth-child(7){
+                        margin-right: 15px;
+                    }
+                }
+            }
+            
+        }
+        .formulario{
+            width: 100%;
+            max-width: 250px;
+            height: 280px;
+            background-color: rgba(255, 255, 255, 0.868);
+            border-radius: 10px;
+            padding: 20px;
+            align-self: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .formulario-destino{
+                position: relative;
+                height: 48px;
+                .formulario-destino-input{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                    border-bottom: 2px solid #000;
+                    outline: none;
+                    padding: 1rem;
+                    background: none;
+                    z-index: 1;
+                }
+                .formulario-destino-label{
+                    position: absolute;
+                    top: 50%;
+                    left: 0.3rem;
+                    transform: translatey(-50%);
+                    padding: 0.25rem;
+                    text-shadow: #fff;
+                    color: black;
+                    transition: 0.3s;
+                    z-index: 0;
+                    i{
+                        margin-right: 5px;
+                    }
+                }
+                .formulario-destino-input:focus + .formulario-destino-label{
+                    top: 0;
+                    left: -1rem;
+                    color: #1d4d8b;
+                    font-size: 0.7rem;
+                    z-index: 10;
+                    font-weight: 500;
+                    i{
+                        opacity: 0;
+                    }
+                }
+                .formulario-destino-input:not(:placeholder-shown).formulario-destino-input:not(:focus)+.formulario-destino-label{
+                    top: 0;
+                    left: -1rem;
+                    font-size: 0.7rem;
+                    z-index: 10;
+                    i{
+                        opacity: 0;
+                    }
+                }
+                .formulario-destino-input:focus{
+                    border-bottom: 2px solid #1d4d8b;
+                }
+                &:hover .formulario-destino-label{
+                    color: #1d4d8b;
+                }
+            }
+            .formulario-inout{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .in, .out{
+                    @extend .formulario-destino;
+                    width: 100px;
+                    .formulario-input{
+                        @extend .formulario-destino-input; 
+                    }
+                    .formulario-label{
+                        @extend .formulario-destino-label; 
+                    }
+                }
+            }
+            .formulario-huespedes{
+                @extend .formulario-destino;
+                .formulario-input{
+                    @extend .formulario-destino-input; 
+                }
+                .formulario-label{
+                    @extend .formulario-destino-label; 
+                }
+            }
+            .formulario-buscar{
+                @extend .formulario-destino;
+                .formulario-button{
+                    position: absolute;
+                    background-color: transparent;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 100%;
+                    height: 40px;
+                    border: none;
+                    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+                    transition: all 500ms ease;
+                    cursor: pointer;
+                    outline: none;
+                    font-size: 1rem;
+                    overflow: hidden;
+                    i{
+                        margin-right: 5px;
+                    }
+                    span {
+                        position: absolute;
+                        background: #1d4d8b;;
+                        transition: .5s;
+                        &:nth-child(1) {
+                            width: 100%;
+                            height: 2px;
+                            top: 0;
+                            left: -100%;
+                        }
+                        &:nth-child(2) {
+                            width: 100%;
+                            height: 2px;
+                            bottom: 0;
+                            right: -100%;
+                        }
+                        &:nth-child(3) {
+                            width: 2px;
+                            height: 100%;
+                            bottom: -100%;
+                            left: 0;
+                        }
+                        &:nth-child(4) {
+                            width: 2px;
+                            height: 100%;
+                            top: -100%;
+                            right: 0;
+                        }
+                    }
+                    &:hover span:nth-child(1) {
+                        left: 0;
+                    }
+                    &:hover span:nth-child(2) {
+                        right: 0;
+                    }
+                    &:hover span:nth-child(3) {
+                        bottom: 0;
+                    }
+                    &:hover span:nth-child(4) {
+                        top: 0;
+                    }
+                    &:hover{
+                        color: #1d4d8b;
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+        }
+    }
+    .wtsp_float{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #25d366;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 7px;
+        right: 7px;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+        transition: all 600ms ease;
+        animation: slide-in-br 0.5s 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        .wtsp_float_container{
+            width: 40px;
+            height: 40px;
+            overflow: visible;
+            .wtsp_float_container_plain, .wtsp_float_container_chat{
+                fill: none;
+                stroke: #ffffff;
+                stroke-dasharray: 1097;
+                stroke-dashoffset: 1097;
+                transition: all 600ms ease;
+            }
+            .wtsp_float_container_plain{
+                animation: joinchat_plain 6s 3.2s ease-in-out infinite;
+                transform: translateX(40px);
+            }
+            .wtsp_float_container_chat{
+                animation: joinchat_plain 6s .2s ease-in-out infinite;
+            }
+        }
+        &:hover {
+            background-color: #ffffff;
+            box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3);
+        }
+        &:hover .wtsp_float_container_plain{
+            stroke: #25d366;
+        }
+        &:hover .wtsp_float_container_chat{
+            stroke: #25d366;
+        }
+    }
+}
+footer{
+    span{
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        font-size: 0.8rem;
+        color: #fff;
+    }
+}
+
+
+
+

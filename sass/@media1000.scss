@@ -1,0 +1,35 @@
+@media (min-width:1000px){
+    .home{
+        .home-container{
+            flex-direction: column;
+            width: 90%;
+            .slogan-container{
+                flex-direction: row;
+                line-height: 100px;
+                .slogan-uno, .slogan-dos{
+                    .slogan{
+                        font-size: 50px;
+                        align-self: center;
+                    }
+                }
+            .slogan-uno .slogan{
+                    &:nth-child(14){
+                        margin-right: 15px;
+                    }
+                }
+            }
+            .formulario{
+                max-width: 1100px;
+                height: 68px;
+                flex-direction: row;
+                align-items: center;
+                .formulario-destino{
+                    width: 200px;
+                    .formulario-destino-input{
+                        width: 90%;
+                    }
+                }
+            }
+        }
+    }
+}
